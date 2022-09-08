@@ -1,0 +1,39 @@
+﻿@using M6L5.Core.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Book;
+
+
+<div class="text-center-full">
+
+    <div>
+        <img class="image-small" src=@Model.Image />
+        <h5 class="title">@Model.Title</h5>
+        <h5>@Model.AuthorFullName</h5>
+        <h5>@Model.BooksSold</h5>
+        <h5>@Model.ReleaseDate</h5>
+        <div style="margin: 20px ">
+
+
+            <form asp-action="Update" asp-controller="Home" asp-route-id="@Model.Id">
+                <p>
+                    <label asp-for="Description">Description</label><br />
+                    <textarea asp-for="Description" rows=7 cols=20></textarea>
+                </p>
+                <p>
+                    <input type="submit" value="Сохранить" />
+                </p>
+            </form>
+
+        </div>
+        <h5 class="green">@Model.Price$</h5>
+        <form asp-action="Delete" asp-route-id="@Model.Id">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete this record?')">
+                Delete
+            </button>
+        </form>
+    </div>
+</div>
