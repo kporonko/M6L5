@@ -23,7 +23,7 @@ namespace M6L5.Core.Services
         public void Create(User user)
         {
             var users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(dir + path));
-            User newUser = new User { Id = user.Id, Login = user.Login, Password = user.Password};
+            User newUser = new User { Id = user.Id, Login = user.Login, Password = user.Password, Role = user.Role, RoleId = user.RoleId};
             users.Add(newUser);
             File.WriteAllText(dir + path, JsonConvert.SerializeObject(users));
         }

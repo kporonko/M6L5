@@ -32,7 +32,7 @@ namespace M6L5.Controllers
                 User user = _userService.GetAll().FirstOrDefault(u => u.Login == loginUser.Login && u.Password == loginUser.Password);
                 if (user != null)
                 {
-                    await Authenticate(loginUser.Login);
+                    await Authenticate(new User { Login = loginUser.Login, Password = loginUser.Password, Role = user.Role});
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError(string.Empty, "Incorrect login or password");
@@ -40,10 +40,18 @@ namespace M6L5.Controllers
             return View(loginUser);
         }
 
-        private async Task Authenticate(string login)
+        private async Task Authenticate(User user)
         {
-            var claims = new List<Claim>{ new Claim(ClaimsIdentity.DefaultNameClaimType, login) };
-            ClaimsIdentity identity = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            var claims = new List<Claim>
+            { 
+                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role?.Name)
+            };
+            ClaimsIdentity identity = new ClaimsIdentity(
+                claims,
+                "ApplicationCookie",
+                ClaimsIdentity.DefaultNameClaimType,
+                ClaimsIdentity.DefaultRoleClaimType);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
         }
 
@@ -62,8 +70,19 @@ namespace M6L5.Controllers
                 User user = _userService.GetAll().FirstOrDefault(u => u.Login == registerUser.Login && u.Password == registerUser.Password);
                 if (user == null)
                 {
-                    _userService.Create(new User { Id = _userService.GetLastId() + 1, Login = registerUser.Login, Password = registerUser.Password });
-                    await Authenticate(registerUser.Login);
+                    Role role = new Role { Id = 1, Name = "user" };
+                    User newUser = new User { Login = registerUser.Login, Password = registerUser.Password, Role = role };
+                    if (_userService.GetAll().Count == 0)
+                    {
+                        newUser.Id = 1;
+                        _userService.Create(newUser);
+                    }
+                    else
+                    {
+                        newUser.Id = _userService.GetLastId() + 1;
+                        _userService.Create(newUser);
+                    }
+                    await Authenticate(newUser);
                     return RedirectToAction("Login", "Account");
                 }
                 ModelState.AddModelError(string.Empty, "Incorrect login or password");

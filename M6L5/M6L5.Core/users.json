@@ -1,1 +1,26 @@
-[{"Id":1,"Login":"Admin@gmail.com","Password":"1234567890"},{"Id":2,"Login":"mylogin@gmail.com","Password":"qwertyui"},{"Id":3,"Login":"a@gmail.com","Password":"qazwsxedc"}]
+[
+  {
+    "Id": 1,
+    "Login": "User@gmail.com",
+    "Password": "1234567890",
+    "Role": {
+      "Id": 1,
+      "Name": "user",
+      "Users": [
+      ]
+    },
+    "RoleId": 0
+  },
+  {
+    "Id": 2,
+    "Login": "Admin@gmail.com",
+    "Password": "1234567890",
+    "Role": {
+      "Id": 2,
+      "Name": "admin",
+      "Users": [
+      ]
+    },
+    "RoleId": 0
+  }
+]

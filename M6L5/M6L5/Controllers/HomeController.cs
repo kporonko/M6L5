@@ -23,7 +23,9 @@ namespace M6L5.Controllers
             Book book = _bookService.Get(id);
             return View(book);
         }
-        [Authorize]
+
+        [Authorize(Roles = "user")]
+        //[Authorize]
         public IActionResult Index()
         {
             var books = _bookService.Get();
