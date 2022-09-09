@@ -1,5 +1,6 @@
 ﻿using M6L5.Core.Models;
 using M6L5.Core.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -22,7 +23,7 @@ namespace M6L5.Controllers
             Book book = _bookService.Get(id);
             return View(book);
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             var books = _bookService.Get();

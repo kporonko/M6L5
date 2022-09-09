@@ -1,1 +1,32 @@
-[{"Id":1,"Title":"The Return of the Gods","ReleaseDate":"2002-10-01T00:00:00","Image":"https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/51ZNrhtbWYL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg","Description":"sss","AuthorFullName":"Jonathan Cahn","Price":155.9,"BooksSold":10102},{"Id":2,"Title":"Breaking History: A White House Memoir","ReleaseDate":"2022-07-01T00:00:00","Image":"https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/71sifGleAWL.jpg","Description":"Breakingcghfghfgnfgn","AuthorFullName":"Jared Kushner","Price":17.99,"BooksSold":2923},{"Id":3,"Title":"Fire & Blood: 300 Years Before A Game of Thrones (The Targaryen Dynasty: The House of the Dragon)","ReleaseDate":"2022-08-04T00:00:00","Image":"https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/91k-kLccE8L.jpg","Description":"Centuries before the events of A Game of Thrones, House Targaryen�the only family of dragonlords to survive the Doom of Valyria�took up residence on Dragonstone. Fire & Blood begins their tale with the legendary Aegon the Conqueror, creator of the Iron Throne, and goes on to recount the generations of Targaryens who fought to hold that iconic seat, all the way up to the civil war that nearly tore their dynasty apart.","AuthorFullName":"George R. R. Martin","Price":7.99,"BooksSold":2222}]
+[
+  {
+    "Id": 1,
+    "Title": "The Return of the Gods",
+    "ReleaseDate": "2002-10-01T00:00:00",
+    "Image": "https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/51ZNrhtbWYL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    "Description": "sss",
+    "AuthorFullName": "Jonathan Cahn",
+    "Price": 155.9,
+    "BooksSold": 10102
+  },
+  {
+    "Id": 2,
+    "Title": "Breaking History: A White House Memoir",
+    "ReleaseDate": "2022-07-01T00:00:00",
+    "Image": "https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/71sifGleAWL.jpg",
+    "Description": "Breakingcghfghfgnfgn",
+    "AuthorFullName": "Jared Kushner",
+    "Price": 17.99,
+    "BooksSold": 2923
+  },
+  {
+    "Id": 3,
+    "Title": "Fire & Blood: 300 Years Before A Game of Thrones (The Targaryen Dynasty: The House of the Dragon)",
+    "ReleaseDate": "2022-08-04T00:00:00",
+    "Image": "https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/91k-kLccE8L.jpg",
+    "Description": "Centuries before the events of A Game of Thrones, House Targaryen�the only family of dragonlords to survive the Doom of Valyria�took up residence on Dragonstone. Fire & Blood begins their tale with the legendary Aegon the Conqueror, creator of the Iron Throne, and goes on to recount the generations of Targaryens who fought to hold that iconic seat, all the way up to the civil war that nearly tore their dynasty apart.",
+    "AuthorFullName": "George R. R. Martin",
+    "Price": 7.99,
+    "BooksSold": 2222
+  }
+]
