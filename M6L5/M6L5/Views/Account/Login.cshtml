@@ -1,0 +1,24 @@
+﻿@model M6L5.Core.ViewModels.UserLogin
+
+<h1>Enter</h1>
+
+<form asp-action="Login" asp-controller="Account" asp-antiforgery="true">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div>
+            <label asp-for="Login">Enter Login</label>
+            <input type="text" asp-for="Login"/>
+            <span asp-validation-for="Login"></span>
+        </div>
+        <div>
+            <label>Enter Password</label>
+            <input asp-for="Password"/>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <input type="submit" value="Enter"/>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Register">Create a new account</a>

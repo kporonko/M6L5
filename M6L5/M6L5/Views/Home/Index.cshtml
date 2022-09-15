@@ -1,0 +1,17 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @{
+        foreach(Book book in Model)
+        {
+            <div class="small-width">
+                <img class="image-small" src=@book.Image />
+                <h4 class="title">@Html.ActionLink(@book.Title, "Book", new {id = book.Id})</h4>
+                <h5 class="green">@book.Price$</h5>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,29 @@
+﻿@model M6L5.Core.ViewModels.UserRegister
+
+<h1>Enter</h1>
+
+<form asp-action="Register" asp-controller="Account" asp-antiforgery="true">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div>
+            <label asp-for="Login">Enter Login</label>
+            <input type="text" asp-for="Login"/>
+            <span asp-validation-for="Login"></span>
+        </div>
+        <div>
+            <label>Enter Password</label>
+            <input asp-for="Password"/>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label>Repeat Password</label>
+            <input asp-for="PasswordConfirmation"/>
+            <span asp-validation-for="PasswordConfirmation"></span>
+        </div>
+        <div>
+            <input type="submit" value="Create account"/>
+        </div>
+    </div>
+</form>
+
+<a asp-action="Registration">Create a new account</a>
